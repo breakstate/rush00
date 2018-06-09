@@ -1,0 +1,63 @@
+______ _                   _             
+| ___ \ |                 (_)            
+| |_/ / | __ _ _ __  _ __  _ _ __   __ _ 
+|  __/| |/ _` | '_ \| '_ \| | '_ \ / _` |
+| |   | | (_| | | | | | | | | | | | (_| |
+\_|   |_|\__,_|_| |_|_| |_|_|_| |_|\__, |
+                                    __/ |
+                                   |___/ 
+
+*******************************************************************************
+
+GameObject: (extended by: player, missile, enemy)
+    -Abstract class 
+        -Due to virtual functions (functions that may or may not be used by the child function (?))
+        -getPos() : returns object coords (struct maybe yes)
+        -update() : updates objects position (could rely on object specific values for speed/direction (utilize overloading))
+        -fire() : spawn missile object initialized to position (also depends on parent type)
+        -erase() : erases object from screen and memory (when out of bounds or when destroyed/collision detected)
+        -checkCollision() : checks if any coords are common
+
+Player: 
+        -getPos
+        -update
+        -fire
+        -erase
+        -checkCollision
+            -array of bullet instances        
+
+Enemy:  
+        -getPos
+        -update
+        -fire
+        -erase
+        -checkCollision
+            -array of bullet instances
+
+Missile:
+        -getPos
+        -update        
+        -erase
+        -checkCollision
+            -array of bullet instances
+
+ArenaObject:
+        -game loop
+        -key handler
+            -array of enemy instances  
+            -player instance
+            -top and bottom boarder chars
+        //bonus 
+        second window for scores
+        different enemy types
+        special attacks
+        power-ups 
+        colours
+
+noteS:
+    each obeject has max missile count (array of like.. 3)
+    max enemies (also in array)
+    scrolling of some kind
+
+
+*******************************************************************************
